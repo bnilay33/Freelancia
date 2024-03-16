@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FreeLancia</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+
+<script>
+     function  validateForm(){
+        let x= document.forms["project_post"]["cname"].value;
+        if(x == "" || x == null){
+            alert("Comapany name must be filled out");
+            return false;
+        }
+        let y= document.forms["project_post"]["pname"].value;
+        if(y == "" || y == null){
+            alert("Project name must be filled out.");
+            return false;
+        }
+        let z= document.forms["project_post"]["description"].value;
+        if(z == ""){
+            alert("Description must be filled out.");
+            return false;
+        }
+        let a= document.forms["project_post"]["duration"].value;
+        if(a == ""){
+            alert("Duration must be filled out.");
+            return false;
+        }
+        let b= document.forms["project_post"]["qualification"].value;
+        if(b == ""){
+            alert("Qualification name must be filled out.");
+            return false;
+        }
+        let c= document.forms["project_post"]["skill"].value;
+        if(c == ""){
+            alert("Skill Section must be filled out.");
+            return false;
+        }
+        let d= document.forms["project_post"]["ddate"].value;
+        if(d == ""){
+            alert("Deadline Date must be filled out.");
+            return false;
+        }
+        let e= document.forms["project_post"]["demo"].value;
+        if(e == ""){
+            alert("Demo Project must be uploaded.");
+            return false;
+        }
+        let f= document.forms["project_post"]["pphoto"].value;
+        if(f == ""){
+            alert("Project Based Photo must be uploaded.");
+            return false;
+        }else{
+            alert("Successfull");
+            location.href("indexx.html");
+        }
+        
+     }
+
+</script>
+
+
+</script>
+<body>
+<div class="container">
+        <h1>Free<span>Lancia</span></h1>
+        <h2>Post Your Job</h2>
+        <form id="project_post" action="action.php" onsubmit="return validateForm()" method="post">
+            <div class="inputBox">
+                <div class="inputBox1" >
+                <input type="text" name="cname">
+                <span>Company Name</span>
+                </div>
+                <div class="inputBox2">
+               <input type="text" name="pname">
+               <span>Project Name</span>
+                </div>
+                <div class="inputBox3">
+               <input type="text" name="description">
+               <span>Project Description</span>
+                </div>
+                <div class="inputBox4">
+               <input type="text" name="duration">
+               <span>Project Duration</span>
+                </div>
+                <div class="inputBox5">
+                <input type="text" name="qualification">
+                <span>Qualification</span>
+                </div>
+                <div class="inputBox6">
+               <input type="text" name="skill">
+               <span>Skills Required</span>
+                </div>
+                <div class="inputBox7">
+                <input type="text" name="ddate">
+                <span>Deadline Date</span>
+                </div>
+            </div>
+            <div class="DemoProject">
+                <span>Demo Project:- </span>
+                <input type="file" name="demo">
+            </div>
+            <div class="ProjectPhoto">
+                <span>Project based Photo:- </span>
+                <input type="file" name="pphoto">
+            </div>
+            <input class="Submit" type="submit" name="submit" value="Submit" onclick="Redirect()">
+        </form>
+</div>
+</body>
+</html>

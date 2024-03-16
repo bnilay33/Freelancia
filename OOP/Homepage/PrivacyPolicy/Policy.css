@@ -1,0 +1,50 @@
+h1{
+    font-size: 60px;
+    text-align: center;
+    text-transform:inherit;
+    text-decoration: underline;
+    font-weight: bold;
+}
+.one,.two,.three,.four,.five,.six,.seven,.eight,.nine,.ten,.eleven{
+    font-size: 35px;
+    font-weight: bold;
+}
+p{
+    font-size: 25px;
+    font-weight:500;
+    font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+    line-height: 3rem;
+    box-sizing: border-box;
+}
+
+@media screen and (max-width:290px){
+    h1{
+        font-size: 24px;
+        text-align: center;
+        text-transform:inherit;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+    p{
+        font-size: 17px;
+        font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+        line-height: 2.3rem;
+        box-sizing:border-box;
+        width: 90%;
+        left: 40px;
+        padding: 10px;
+        text-justify: center;
+        
+
+    }
+    .one,.two,.three,.four,.five,.six,.seven,.eight,.nine,.ten,.eleven{
+        font-size: 20px;
+        font-weight: bold;
+        left: 40px;
+        margin-top: 30px;
+    }
+    b{
+        font-size: 10px;
+    }
+    
+}

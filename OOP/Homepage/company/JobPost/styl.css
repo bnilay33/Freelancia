@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@10..48,600&display=swap');
+
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    gap: 30px;
+    background: #1d2b3a;
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+.container{
+    height: 100vh;
+    width: 100%;
+    overflow: scroll;
+}
+.container h1{
+    margin-left: 40px;
+    color: #21FD16;
+}
+.container h1 span{
+    color: #fff;
+}
+.container h2{
+    color: #27fc91;
+    text-align: center;
+}
+
+.inputBox{
+    position: relative;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    width: 70%;
+    top: 50px;
+    left: 150px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    }
+    .inputBox input{
+        width: 100%;
+        padding: 10px;
+        border: 1px solid rgb(255, 249, 249);
+        background: #1d2b3a;
+        border-radius: 5px;
+        outline: none;
+        color: white;
+        font-size: 1em;
+        font-family: 'Bricolage Grotesque', sans-serif;
+    }
+    .inputBox span {
+        position: absolute;
+        left: 0;
+        padding: 10px;
+        pointer-events: none;
+        font-size: 1em;
+        color: rgba(255, 255, 255, 0.25);
+        text-transform: uppercase;
+        transition: 0.5s;
+        font-family: 'Bricolage Grotesque', sans-serif;
+    }
+
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span
+{
+    color: #00dfc4;
+    transform: translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background: #1d2b3a;
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+
+.inputBox:nth-child(1) input:valid ~ span,
+.inputBox:nth-child(1) input:focus ~ span{
+    background: #00dfc4;
+    color: black;
+    border-radius: 2px;
+    font-family: 'Bricolage Grotesque', sans-serif;
+}
+.inputBox1,.inputBox2,.inputBox3,.inputBox4,.inputBox5,.inputBox6,.inputBox7{
+    margin-bottom: 20px;
+}
+.container form .DemoProject{
+    margin-left: 160px;
+    margin-top: 80px;
+    font-size: 1em;
+    text-transform: uppercase;
+}
+.container form .DemoProject span{
+    color: rgba(255, 255, 255, 0.25);
+}
+.container form .DemoProject input{
+    color: rgb(255, 255, 255);
+}
+.container form .ProjectPhoto{
+    margin-left: 160px;
+    margin-top: 30px;
+    font-size: 1em;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+.container form .ProjectPhoto span{
+    color: rgba(255, 255, 255, 0.25);
+}
+.container form .ProjectPhoto input{
+    color: rgb(255, 255, 255);
+}
+.container form .Submit{
+    border-radius: 2px;
+    font-size: 20px;
+    height: 25px;
+    width: 100px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+@media screen and (max-width:290px){
+    html,body{
+        width: 100%;
+        height: 100vh;
+        overflow: scroll;
+        scroll-behavior: smooth;
+    }
+    .container{
+        width: 100%;
+        height: 100vh;
+        overflow: scroll;
+        scroll-behavior: smooth;
+    }
+    h1{
+        margin-left: 40px;
+        color: #21FD16;
+        margin-top:10px;
+    }
+    h2{
+        color: #27fc91;
+        text-align: center;
+        margin-top:15px;
+    }
+    .container form#project_post{
+        position: relative;
+        left: 0;
+    }
+    .inputBox{
+        position: relative;
+        flex-direction: column;
+        width: 100%;
+        top: 50px;
+        font-family: 'Bricolage Grotesque', sans-serif;
+        }
+        .inputBox input{
+            width: 100%;
+            padding: 10px;
+            border: 1px solid rgb(255, 249, 249);
+            background: #1d2b3a;
+            border-radius: 5px;
+            outline: none;
+            color: white;
+            font-size: 1em;
+            font-family: 'Bricolage Grotesque', sans-serif;
+        }
+        .inputBox span {
+            position: absolute;
+            left: 0;
+            padding: 10px;
+            pointer-events: none;
+            font-size: 1em;
+            color: rgba(255, 255, 255, 0.25);
+            text-transform: uppercase;
+            transition: 0.5s;
+            font-family: 'Bricolage Grotesque', sans-serif;
+        }
+    
+    .inputBox input:valid ~ span,
+    .inputBox input:focus ~ span
+    {
+        color: #00dfc4;
+        transform: translateX(10px) translateY(-7px);
+        font-size: 0.65em;
+        padding: 0 10px;
+        background: #1d2b3a;
+        font-family: 'Bricolage Grotesque', sans-serif;
+    }
+    
+    .inputBox:nth-child(1) input:valid ~ span,
+    .inputBox:nth-child(1) input:focus ~ span{
+        background: #00dfc4;
+        color: black;
+        border-radius: 2px;
+        font-family: 'Bricolage Grotesque', sans-serif;
+    }
+    .inputBox1,.inputBox2,.inputBox3,.inputBox4,.inputBox5,.inputBox6,.inputBox7{
+        margin-bottom: 20px;
+    }
+    .container form .DemoProject{
+       /* margin-left: 160px;*/
+        margin-top: 80px;
+        font-size: 1em;
+        text-transform: uppercase;
+    }
+    .container form .DemoProject span{
+        color: rgba(255, 255, 255, 0.25);
+    }
+    .container form .DemoProject input{
+        color: rgb(255, 255, 255);
+    }
+    .container form .ProjectPhoto{
+       /* margin-left: 160px;*/
+        margin-top: 30px;
+        font-size: 1em;
+        text-transform: uppercase;
+        margin-bottom: 50px;
+    }
+    .container form .ProjectPhoto span{
+        color: rgba(255, 255, 255, 0.25);
+    }
+    .container form .ProjectPhoto input{
+        color: rgb(255, 255, 255);
+    }
+    .container form .Submit{
+        border-radius: 2px;
+        font-size: 20px;
+        height: 25px;
+        width: 100px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+        margin-bottom: 20px;
+
+}
+
+}
+  
