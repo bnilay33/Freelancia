@@ -1,0 +1,881 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: rgb(183, 195, 255);
+}
+.html{
+  scroll-behavior: smooth;
+}
+.boxs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+   
+    flex-wrap:wrap;
+    margin-top: 25px;
+   
+}
+.boxs .box{
+    position: relative;
+    width: 270px;
+    height: 420px;
+    margin: 30px;
+    background: #499a88;
+    border: 2px solid bisque;
+    border-radius: 20px;
+    border-top-left-radius: 50px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 50px;
+    /* for Mozila version less than 3.6  */
+    -moz-border-radius-topleft: 30px;
+    -moz-border-radius-topright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    -moz-border-radius-bottomright: 30px;
+
+  
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+    overflow:visible;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+.box::before {
+    content: '';
+    position: absolute;
+    top: -140px;
+    left: -40%;
+    width: 100%;
+    height: 120%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2));
+    transform: rotate(35deg);
+    pointer-events: none;
+    filter: blur(5px);
+}
+.box:hover{
+  
+    transform: scale(1.05);
+    
+  
+}
+.box img {
+    position: absolute;
+    top: -35px;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background: var(--clr-dark);
+    border: 2px solid #fff;
+    
+    
+    box-shadow: 0 10px 0 rgba(0, 0, 0, 0.1),
+        inset 0 -8px 0 var(--clr-light);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+}
+
+
+
+/*.box img{
+    height:90px;
+    width: 90px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom:5px solid rgb(123, 123, 123);
+    
+}*/
+.box h2{
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    padding: 30px;
+    padding-top: 80px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    background-image: linear-gradient(
+      -225deg,
+      #b52626 50%,
+      #00585d 29%,
+      #032563 67%,
+      #453803 100%
+    );
+    background-size: 200% auto;
+    
+    background-clip: text;
+    padding-left: 30px;
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+.box h3{
+    background-color: transparent;
+    position: absolute;
+    width: 100%;
+    padding: 30px;
+    padding-top:130px;
+    text-align: center;
+    color: rgb(131, 4, 148);
+    font-size: 18px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif
+}
+
+
+.center{
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+}
+.center .stars{
+  height: 50px;
+  width: 200px;
+  text-align: center;
+  background-color: transparent;
+}
+.stars input{
+  display: none;
+}
+.stars label{
+  float: right;
+  font-size: 30px;
+  color: lightgrey;
+  margin: 0 5px;
+  text-shadow: 1px 1px #bbb;
+  background-color: transparent;
+}
+.stars label:before{
+  content: '★';
+}
+.stars input:checked ~ label{
+  color: gold;
+  text-shadow: 1px 1px #c60;
+}
+.stars:not(:checked) > label:hover,
+.stars:not(:checked) > label:hover ~ label{
+  color: gold;
+}
+.stars input:checked > label:hover,
+.stars input:checked > label:hover ~ label{
+  color: gold;
+  text-shadow: 1px 1px goldenrod;
+}
+.stars .result:before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  top: 90%;
+  left: 55%;
+  transform: translateX(-47%);
+  bottom: -30px;
+  font-size: 20px;
+  font-weight: 500;
+  color: gold;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: none;
+}
+.stars input:checked ~ .result:before{
+  display: block;
+}
+.stars #five:checked ~ .result:before{
+  content: "Excellent! ";
+}
+.stars #four:checked ~ .result:before{
+  content: "Good! ";
+}
+.stars #three:checked ~ .result:before{
+  content: "Average! ";
+}
+.stars #two:checked ~ .result:before{
+  content: "Below Average! ";
+}
+.stars #one:checked ~ .result:before{
+  content: "Bad! ";
+}
+
+
+.centered {
+  position: absolute;
+  top: 70%;
+  left: 60%;
+  margin-left:-130px;
+  margin-top:-35px;
+  border-radius: 20px;
+  background-color: transparent;
+  
+}
+.textfield {
+ position: relative;
+  padding: 10px 15px;
+  border:2px solid bisque;
+  border-radius: 20px;
+    border-top-left-radius: 20px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 20px;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+  background-color: #fff;
+}
+.centered span {
+  position: absolute;
+  z-index: 1;
+  
+  top: 10px;
+  left: 5px;
+  color:rgb(152, 109, 0);
+  padding:0 5px;
+  background-color: transparent;
+}
+.textfield:focus {
+  border:2px solid bisque;
+  background-color: white;
+}
+input:focus ~ span,
+input:not(:focus):valid ~ span {
+  top:-20px;
+  color: rgb(0, 42, 127);
+  font-weight: bold;
+  font-size: 18px;
+  
+
+}
+.textfield, span {
+transition: ease-in-out 0.2s all;
+-webkit-transition: ease-in-out 0.2s all;
+-moz-transition: ease-in-out 0.2s all;
+-o-transition: ease-in-out 0.2s all;
+}
+
+button{
+  position: absolute;
+  height: 40px;
+  width: 90px;
+  left: 43px;
+  top: 335px;
+  margin: 0 40px;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 20px;
+    border-top-left-radius: 20px;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 20px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  outline: none;
+  cursor: pointer;
+  background: #d13737;
+  overflow: hidden;
+  transition: 0.10s;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+button:first-child{
+  color: #ffffff;
+  border-color: #206592;
+}
+
+button:before, button:after{
+  position: absolute;
+  content: '';
+  left: 0;
+  top: 0;
+  height: 100%;
+  filter: blur(30px);
+  opacity: 0.4;
+  transition: 0.10s;
+}
+button:before{
+  width: 60px;
+  background: rgba(255,255,255,0.6);
+  transform: translateX(-130px) skewX(-45deg);
+}
+button:after{
+  width: 30px;
+  background: rgba(255,255,255,0.6);
+  transform: translateX(-130px) skewX(-45deg);
+}
+button:hover:before,
+button:hover:after{
+  opacity: 0.6;
+  transform: translateX(320px) skewX(-45deg);
+}
+button:hover{
+  color: #f2f2f2;
+  border: 2px solid #fff;
+}
+button:hover:first-child{
+  background: #206592;
+}
+
+.center2{
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+}
+.center2 .stars2{
+  height: 50px;
+  width: 200px;
+  text-align: center;
+  background-color: transparent;
+}
+.stars2 input{
+  display: none;
+}
+.stars2 label{
+  float: right;
+  font-size: 30px;
+  color: lightgrey;
+  margin: 0 5px;
+  text-shadow: 1px 1px #bbb;
+  background-color: transparent;
+}
+.stars2 label:before{
+  content: '★';
+}
+.stars2 input:checked ~ label{
+  color: gold;
+  text-shadow: 1px 1px #c60;
+}
+.stars2:not(:checked) > label:hover,
+.stars2:not(:checked) > label:hover ~ label{
+  color: gold;
+}
+.stars2 input:checked > label:hover,
+.stars2 input:checked > label:hover ~ label{
+  color: gold;
+  text-shadow: 1px 1px goldenrod;
+}
+.stars2 .result2:before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  top: 90%;
+  left: 55%;
+  transform: translateX(-47%);
+  bottom: -30px;
+  font-size: 20px;
+  font-weight: 500;
+  color: gold;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: none;
+}
+.stars2 input:checked ~ .result2:before{
+  display: block;
+}
+.stars2 #five5:checked ~ .result2:before{
+  content: "Excellent! ";
+}
+.stars2 #four4:checked ~ .result2:before{
+  content: "Good! ";
+}
+.stars2 #three3:checked ~ .result2:before{
+  content: "Average! ";
+}
+.stars2 #two2:checked ~ .result2:before{
+  content: "Below Average! ";
+}
+.stars2 #one1:checked ~ .result2:before{
+  content: "Bad! ";
+}
+
+.center3{
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+}
+.center3 .stars3{
+  height: 50px;
+  width: 200px;
+  text-align: center;
+  background-color: transparent;
+}
+.stars3 input{
+  display: none;
+}
+.stars3 label{
+  float: right;
+  font-size: 30px;
+  color: lightgrey;
+  margin: 0 5px;
+  text-shadow: 1px 1px #bbb;
+  background-color: transparent;
+}
+.stars3 label:before{
+  content: '★';
+}
+.stars3 input:checked ~ label{
+  color: gold;
+  text-shadow: 1px 1px #c60;
+}
+.stars3:not(:checked) > label:hover,
+.stars3:not(:checked) > label:hover ~ label{
+  color: gold;
+}
+.stars3 input:checked > label:hover,
+.stars3 input:checked > label:hover ~ label{
+  color: gold;
+  text-shadow: 1px 1px goldenrod;
+}
+.stars3 .result3:before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  top: 90%;
+  left: 55%;
+  transform: translateX(-47%);
+  bottom: -30px;
+  font-size: 20px;
+  font-weight: 500;
+  color: gold;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: none;
+}
+.stars3 input:checked ~ .result3:before{
+  display: block;
+}
+.stars3 #five55:checked ~ .result3:before{
+  content: "Excellent! ";
+}
+.stars3 #four44:checked ~ .result3:before{
+  content: "Good! ";
+}
+.stars3 #three33:checked ~ .result3:before{
+  content: "Average! ";
+}
+.stars3 #two22:checked ~ .result3:before{
+  content: "Below Average! ";
+}
+.stars3 #one11:checked ~ .result3:before{
+  content: "Bad! ";
+}
+
+.center4{
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+}
+.center4 .stars4{
+  height: 50px;
+  width: 200px;
+  text-align: center;
+  background-color: transparent;
+}
+.stars4 input{
+  display: none;
+}
+.stars4 label{
+  float: right;
+  font-size: 30px;
+  color: lightgrey;
+  margin: 0 5px;
+  text-shadow: 1px 1px #bbb;
+  background-color: transparent;
+}
+.stars4 label:before{
+  content: '★';
+}
+.stars4 input:checked ~ label{
+  color: gold;
+  text-shadow: 1px 1px #c60;
+}
+.stars4:not(:checked) > label:hover,
+.stars4:not(:checked) > label:hover ~ label{
+  color: gold;
+}
+.stars4 input:checked > label:hover,
+.stars4 input:checked > label:hover ~ label{
+  color: gold;
+  text-shadow: 1px 1px goldenrod;
+}
+.stars4 .result4:before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  top: 90%;
+  left: 55%;
+  transform: translateX(-47%);
+  bottom: -30px;
+  font-size: 20px;
+  font-weight: 500;
+  color: gold;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: none;
+}
+.stars4 input:checked ~ .result4:before{
+  display: block;
+}
+.stars4 #five555:checked ~ .result4:before{
+  content: "Excellent! ";
+}
+.stars4 #four444:checked ~ .result4:before{
+  content: "Good! ";
+}
+.stars4 #three333:checked ~ .result4:before{
+  content: "Average! ";
+}
+.stars4 #two222:checked ~ .result4:before{
+  content: "Below Average! ";
+}
+.stars4 #one111:checked ~ .result4:before{
+  content: "Bad! ";
+}
+
+.center5{
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+}
+.center5 .stars5{
+  height: 50px;
+  width: 200px;
+  text-align: center;
+  background-color: transparent;
+}
+.stars5 input{
+  display: none;
+}
+.stars5 label{
+  float: right;
+  font-size: 30px;
+  color: lightgrey;
+  margin: 0 5px;
+  text-shadow: 1px 1px #bbb;
+  background-color: transparent;
+}
+.stars5 label:before{
+  content: '★';
+}
+.stars5 input:checked ~ label{
+  color: gold;
+  text-shadow: 1px 1px #c60;
+}
+.stars5:not(:checked) > label:hover,
+.stars5:not(:checked) > label:hover ~ label{
+  color: gold;
+}
+.stars5 input:checked > label:hover,
+.stars5 input:checked > label:hover ~ label{
+  color: gold;
+  text-shadow: 1px 1px goldenrod;
+}
+.stars5 .result5:before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  top: 90%;
+  left: 55%;
+  transform: translateX(-47%);
+  bottom: -30px;
+  font-size: 20px;
+  font-weight: 500;
+  color: gold;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: none;
+}
+.stars5 input:checked ~ .result5:before{
+  display: block;
+}
+.stars5 #five5555:checked ~ .result5:before{
+  content: "Excellent! ";
+}
+.stars5 #four4444:checked ~ .result5:before{
+  content: "Good! ";
+}
+.stars5 #three3333:checked ~ .result5:before{
+  content: "Average! ";
+}
+.stars5 #two2222:checked ~ .result5:before{
+  content: "Below Average! ";
+}
+.stars5 #one1111:checked ~ .result5:before{
+  content: "Bad! ";
+}
+
+
+.center6{
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+}
+.center6 .stars6{
+  height: 50px;
+  width: 200px;
+  text-align: center;
+  background-color: transparent;
+}
+.stars6 input{
+  display: none;
+}
+.stars6 label{
+  float: right;
+  font-size: 30px;
+  color: lightgrey;
+  margin: 0 5px;
+  text-shadow: 1px 1px #bbb;
+  background-color: transparent;
+}
+.stars6 label:before{
+  content: '★';
+}
+.stars6 input:checked ~ label{
+  color: gold;
+  text-shadow: 1px 1px #c60;
+}
+.stars6:not(:checked) > label:hover,
+.stars6:not(:checked) > label:hover ~ label{
+  color: gold;
+}
+.stars6 input:checked > label:hover,
+.stars6 input:checked > label:hover ~ label{
+  color: gold;
+  text-shadow: 1px 1px goldenrod;
+}
+.stars6 .result6:before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  top: 90%;
+  left: 55%;
+  transform: translateX(-47%);
+  bottom: -30px;
+  font-size: 20px;
+  font-weight: 500;
+  color: gold;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: none;
+}
+.stars6 input:checked ~ .result6:before{
+  display: block;
+}
+.stars6 #five55555:checked ~ .result6:before{
+  content: "Excellent! ";
+}
+.stars6 #four44444:checked ~ .result6:before{
+  content: "Good! ";
+}
+.stars6 #three33333:checked ~ .result6:before{
+  content: "Average! ";
+}
+.stars6 #two22222:checked ~ .result6:before{
+  content: "Below Average! ";
+}
+.stars6 #one11111:checked ~ .result6:before{
+  content: "Bad! ";
+}
+
+
+.center7{
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+}
+.center7 .stars7{
+  height: 50px;
+  width: 200px;
+  text-align: center;
+  background-color: transparent;
+}
+.stars7 input{
+  display: none;
+}
+.stars7 label{
+  float: right;
+  font-size: 30px;
+  color: lightgrey;
+  margin: 0 5px;
+  text-shadow: 1px 1px #bbb;
+  background-color: transparent;
+}
+.stars7 label:before{
+  content: '★';
+}
+.stars7 input:checked ~ label{
+  color: gold;
+  text-shadow: 1px 1px #c60;
+}
+.stars7:not(:checked) > label:hover,
+.stars7:not(:checked) > label:hover ~ label{
+  color: gold;
+}
+.stars7 input:checked > label:hover,
+.stars7 input:checked > label:hover ~ label{
+  color: gold;
+  text-shadow: 1px 1px goldenrod;
+}
+.stars7 .result7:before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  top: 90%;
+  left: 55%;
+  transform: translateX(-47%);
+  bottom: -30px;
+  font-size: 20px;
+  font-weight: 500;
+  color: gold;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: none;
+}
+.stars7 input:checked ~ .result7:before{
+  display: block;
+}
+.stars7 #five555555:checked ~ .result7:before{
+  content: "Excellent! ";
+}
+.stars7 #four444444:checked ~ .result7:before{
+  content: "Good! ";
+}
+.stars7 #three333333:checked ~ .result7:before{
+  content: "Average! ";
+}
+.stars7 #two222222:checked ~ .result7:before{
+  content: "Below Average! ";
+}
+.stars7 #one111111:checked ~ .result7:before{
+  content: "Bad! ";
+}
+
+.center8{
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  text-align: center;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+}
+.center8 .stars8{
+  height: 50px;
+  width: 200px;
+  text-align: center;
+  background-color: transparent;
+}
+.stars8 input{
+  display: none;
+}
+.stars8 label{
+  float: right;
+  font-size: 30px;
+  color: lightgrey;
+  margin: 0 5px;
+  text-shadow: 1px 1px #bbb;
+  background-color: transparent;
+}
+.stars8 label:before{
+  content: '★';
+}
+.stars8 input:checked ~ label{
+  color: gold;
+  text-shadow: 1px 1px #c60;
+}
+.stars8:not(:checked) > label:hover,
+.stars8:not(:checked) > label:hover ~ label{
+  color: gold;
+}
+.stars8 input:checked > label:hover,
+.stars8 input:checked > label:hover ~ label{
+  color: gold;
+  text-shadow: 1px 1px goldenrod;
+}
+.stars8 .result8:before{
+  position: absolute;
+  content: "";
+  width: 100%;
+  top: 90%;
+  left: 55%;
+  transform: translateX(-47%);
+  bottom: -30px;
+  font-size: 20px;
+  font-weight: 500;
+  color: gold;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: none;
+}
+.stars8 input:checked ~ .result8:before{
+  display: block;
+}
+.stars8 #five5555555:checked ~ .result8:before{
+  content: "Excellent! ";
+}
+.stars8 #four4444444:checked ~ .result8:before{
+  content: "Good! ";
+}
+.stars8 #three3333333:checked ~ .result8:before{
+  content: "Average! ";
+}
+.stars8 #two2222222:checked ~ .result8:before{
+  content: "Below Average! ";
+}
+.stars8 #one1111111:checked ~ .result8:before{
+  content: "Bad! ";
+}
+
+::-webkit-scrollbar{
+  width:15px;
+  
+}
+::-webkit-scrollbar-track{
+  box-shadow: inset 0 0 2px rgb(209, 205, 104);
+  border-radius: 10px;
+  
+ 
+}
+::-webkit-scrollbar-thumb{
+  background: rgb(255, 255, 255);
+  background:  radial-gradient(circle at -3.1% -4.3%, bisque 0%, #499a88 90%);
+  border-radius: 10px;
+  
+}
+@media screen and (max-width: 320px){
+  .boxs .box{
+    width: 240px;
+  }
+  button{
+    position: absolute;
+    left: 32px;
+  }
+  .centered {
+    position: absolute;
+    top: 70%;
+    left: 65%;
+  }
+}
+
+
+
+
+
+ 

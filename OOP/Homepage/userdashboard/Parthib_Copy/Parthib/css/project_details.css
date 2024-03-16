@@ -1,0 +1,400 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+
+    
+}
+body{
+    
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    
+      
+}
+
+.logo{
+  background-image: linear-gradient(
+    -225deg,
+    #686868 50%,
+    #60f7ff 29%,
+    #00ffff 67%,
+    #21fd16 100%
+  );
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    padding-left: 30px;
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+    font-family: sans-serif;
+    font-weight: 20px;
+    font-size: 50px;
+    padding-top: 10px;
+    
+}
+@keyframes textclip {
+  to {
+    background-position: 200% center;
+  }
+}
+.logo span{
+    color: #000000;
+}
+.para{
+  padding-top: 50px;
+  padding-right: 50px;
+  padding-left: 50px;
+}
+.para img{  
+  float: right;
+  border-radius: 30px;
+  width: 200px;
+  height: 200px;padding: 0 0 0 10px;
+ 
+}
+.para h1{
+color: rgb(0, 84, 194);
+ 
+}
+.para p{
+  font-size: 17px;
+  text-align: justify;
+  padding: 0 0 50px 0;
+}
+.btn{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 25%;
+  justify-content: center;
+ 
+}
+.btn button{
+  background: radial-gradient(circle, rgba(203,203,203,1) 0%, rgba(149,0,255,1) 100%);
+  width: 100px;
+  height: 40px;
+  border-radius: 30px;
+  cursor: pointer;
+   box-shadow: 5px 5px 0 0;
+  
+  
+}
+
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 215px;
+  right: 550px;
+  border: 0px solid ;
+  transform:scaleX(1);
+  transform-origin: left;
+  z-index: 9;
+  box-shadow: 0 0 10px 5px;
+}
+.form-popup h1{
+  text-align: center;
+  font-weight: bold;
+  font-family: sans-serif;
+  animation: Color 4s linear infinite;
+  -webkit-animation: Color 4s ease-in-out infinite;
+  text-shadow: 2px 2px #3a3a3a;
+}
+@keyframes Color{
+  0%{
+    color:#21fd16;
+  }
+  
+  20%{
+    color:#21fd16;
+  }
+  
+  40%{
+    color:#02bcff;
+  }
+  
+  60%{
+    color: #ff3613;
+  }
+  
+  80%{
+    color: #ff3549;
+  }
+  
+  100%{
+    color:#9469ff;
+  }
+}
+
+@-moz-keyframes Color{
+  0%{
+    color:#A0D468;
+  }
+  
+  20%{
+    color:#4FC1E9;
+  }
+  
+  40%{
+    color:#FFCE54;
+  }
+  
+  60%{
+    color:#FC6E51;
+  }
+  
+  80%{
+    color:#ED5565;
+  }
+  
+  100%{
+    color:#AC92EC;
+  }
+}
+
+@-webkit-keyframes Color{
+  0%{
+    color:#A0D468;
+  }
+  
+  20%{
+    color:#4FC1E9;
+  }
+  
+  40%{
+    color:#FFCE54;
+  }
+  
+  60%{
+    color:#FC6E51;
+  }
+  
+  80%{
+    color:#ED5565;
+  }
+  
+  100%{
+    color:#21fd16;
+  }
+}
+
+.bid{
+  color: #21fd16;
+  font-weight: bold;
+  text-shadow: 2px 2px #3a3a3a;
+  
+}
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: transparent;
+  backdrop-filter: blur(4px);
+}
+
+  
+  
+
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #00b430;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+  box-shadow: 
+    8px 8px 16px rgba(0,0,0, 0.2),
+    inset -8px -8px 12px rgba(0,0,0, 0.2),
+    inset 8px 8px 12px rgba(255, 255, 255, 0.4);
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background: #B00;
+  border-radius: 15px;
+  box-shadow: 
+    8px 8px 16px rgba(0,0,0, 0.2),
+    inset -8px -8px 12px rgba(0,0,0, 0.2),
+    inset 8px 8px 12px rgba(255, 255, 255, 0.4);
+}
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 10;
+  
+}
+.btn:active{
+  animation: bounce 0.3s;
+}
+@keyframes bounce {
+  0% {
+       transform: scale(1);
+     }
+     25% {
+       transform: scale(0.95);
+     }
+     50% {
+       transform: scale(1.1);
+     }
+     75% {
+       transform: scale(0.98);
+     }
+     100% {
+       transform: scale(1);
+     }
+}
+
+
+
+/*.butn{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding-top: 450px;
+    padding-left: 50px;
+    padding-right: 500px;
+    row-gap: 30%;
+   
+}
+.butn.button{
+    background-color: #21fd16;
+    position:absolute;
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin:20px 10px;
+    font-weight: bold;
+    border: 2px solid black;
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 30px;
+    padding-top: 500px;
+    left:130px;
+    overflow: hidden;
+    text-transform: uppercase;
+}*/
+/*.profile.btn1{
+    background-color: #21fd16;
+    position:absolute;
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin:20px 10px;
+    font-weight: bold;
+    border: 2px solid black;
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    border-radius: 30px;
+    top: 500px;
+    left:130px;
+    overflow: hidden;
+    text-transform: uppercase;
+}*/
+::-webkit-scrollbar{
+    width:15px;
+  }
+  ::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 2px rgb(0, 190, 28);
+    border-radius: 10px;
+   
+  }
+  ::-webkit-scrollbar-thumb{
+    background: rgb(167, 255, 179);
+    background: linear-gradient(180deg,#21fd16 15%, #fff 84%);
+    border-radius: 10px;
+  }
+  
+  @media screen and (max-width: 1280px){
+    .form-popup {
+      bottom: 350px;
+      right: 500px;
+    }
+  }
+  @media screen and (max-width: 1024px){
+    .form-popup {
+      bottom: 230px;
+      right: 370px;
+    }
+  }
+  @media screen and (max-width: 830px){
+    .form-popup {
+      bottom: 150px;
+      right: 300px;
+    }
+  }
+  @media screen and (max-width: 760px){
+    .form-popup {
+      bottom: 120px;
+      right: 270px;
+    }
+  }
+  @media screen and (max-width: 600px){
+    .form-popup {
+      bottom: 120px;
+      right: 250px;
+    }
+  }
+  @media screen and (max-width: 528px){
+    .form-popup {
+      bottom: 350px;
+      right: 120px;
+    }
+  }
+  @media screen and (max-width: 390px){
+    .form-popup {
+      bottom: 330px;
+      right: 40px;
+    }
+    .btn{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      gap: 10%;
+      justify-content: center;
+     
+    }
+  }
+  @media screen and (max-width: 330px){
+    .btn button{
+      background: #b621fe;
+      width: 80px;
+      height: 40px;
+      border-radius: 30px;
+      cursor: pointer;
+       box-shadow: 5px 5px 0 0;
+  }
+  .form-popup {
+    bottom: 350px;
+    right: 20px;
+  }
+}
+  

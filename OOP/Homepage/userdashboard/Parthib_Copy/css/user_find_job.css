@@ -1,0 +1,1227 @@
+*{
+    box-sizing: border-box;
+}
+.html{
+    scroll-behavior: smooth;
+}
+#search{
+    margin-left: 10px;
+    padding: 10px;
+    background: transparent;
+    border:none;
+    color: transparent;
+    outline: none;
+}
+body{
+    margin: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+/*.logo{
+    color: #21fd16;
+    font-size: 40px;
+    font-family: sans-serif;
+    padding-left: 60px;
+    
+}*/
+.logo span{
+    color: #fff;
+}
+.logo:hover{
+    color: aqua;
+}
+.logo
+{
+    background-image: linear-gradient(
+    -225deg,
+    #fff 50%,
+    #c4fcff 29%,
+    #00ffff 67%,
+    #21fd16 100%
+  );
+    background-size: 200% auto;
+    color: #fff;
+    background-clip: text;
+    padding-left: 30px;
+    
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: textclip 2s linear infinite;
+    display: inline-block;
+    font-family: sans-serif;
+    font-weight: 20px;
+    font-size: 50px;
+    padding-top: -30px;
+}
+
+@keyframes textclip {
+    to {
+      background-position: 200% center;
+    }
+  }
+/*
+.menu_bar{
+    height: 100px;
+    width: 90%;
+    display:flex;
+    align-items:center;
+    font-weight: bold;
+    justify-content: space-between;
+    left: 500px;  
+    margin: auto;
+}
+*/
+.searchbar{
+    width: 330px;
+    border: 2px solid #fff;
+    padding: 08px;
+    border-radius: 30px;
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(7,254,226,1) 100%);
+    right: 46px;        /* THERE IS ONE CHANGE 100PX IS CHANGED TO 46PX*/
+    top: 45px;
+    display:flex;
+    position: absolute;
+    color: #fff;
+    
+}
+.searchbar input{
+    background: transparent;
+    border: 0px;
+    outline: 0px;
+    width: 300px;
+    max-width: 90%;
+    right: 56px;
+}
+
+.icon-search{
+    color: black;
+    font-size: 20px;
+    position: absolute;
+    top: 6px;
+    right: 12px;
+}
+.boxs{
+    overflow-x:hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 0px;
+}
+/* ------------------------------------------- */
+.box{
+    background: radial-gradient(circle at 10% 20%, rgb(220, 217, 249) 0%, rgb(172, 224, 217) 89.8%);
+    border: none;
+    color: #000;
+    font-family: sans-serif;
+    font-weight: 300;
+    width: 900px;
+    height: 130px;
+    margin: 10px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 10px rgb(255, 255, 255);
+    transform: translateX(400%);
+    transition: transform 0.4s ease;
+}
+#invisible{
+    background: transparent;
+    border: none;
+    color: blue;
+    float: right;
+    position: relative;
+    bottom: 12px;
+    right: 71px;
+}
+.box:hover{
+    background: linear-gradient(-225deg, #DFFFCD 0%, #90F9C4 48%, #39F3BB 100%);;
+    transition: all .5s;
+    transform : scale(1.1);
+    color:darkred;
+}
+.box:nth-of-type(even){
+    transform: translateX(-400%);
+}
+.box.show{
+    transform: translateX(0);
+}
+.box h2{
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box img{
+    border-radius: 50%;
+    height: 75px;
+    width: 75px;
+    position: absolute;
+    left: 14px;
+    top: 25px;
+}
+.box p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 120px;
+    padding-right: 20px;
+}
+/* ----------------------------------- */
+.listingHeader .dropdown {
+    z-index:1;
+    position:relative;
+    display: inline-block;
+    margin-top: 5px;
+    font-family: 'Roboto',sans-serif;
+  }
+  .listingHeader .dropdown .dd-a {
+    padding:10px;
+    background-color:black;
+    position:relative;
+    left: 1270px;
+    top: -88px;
+    height: 40px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    font-weight: bold;
+    -webkit-box-shadow: 0px 0px 3px 0px rgba(255, 255, 255, 0.3);
+    -moz-box-shadow: 0px 0px 3px 0px rgba(255, 255, 255, 0.3);
+    box-shadow: 0px 0px 3px 0px rgba(255, 255, 255, 0.896);
+    transition-duration: 0.2s;
+    -webkit-transition-duration: 0.2s;
+  }
+  .listingHeader .dropdown input {
+    top: -88px;
+    left: 1270px;
+    opacity:0;
+    display:block;
+    padding:0;
+    margin:0;
+    border:0;
+    position:absolute;
+    height:100%;
+    width:100%;
+  }
+  .listingHeader .dropdown input:hover {
+    cursor:pointer;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+  }
+  .listingHeader .dropdown .dd-a:hover  {
+      color:rgb(0, 156, 29);
+  }
+  .listingHeader .dropdown input:checked:after {
+    transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+  }
+  .listingHeader .dropdown input:checked ~ .dd-c {
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+  }
+  .listingHeader .dropdown .dd-a span {
+    color:black;
+  }
+  
+  .listingHeader .dropdown .dd-c{
+    right: 0;
+    left: 1180px;
+    top: -43px;
+    display:block;
+    position: absolute;
+    background:white;
+    height:auto;
+    transform: scaleY(0);
+    transform-origin: top left;
+    transition-duration: 0.2s;
+    -webkit-transform: scaleY(0);
+    -webkit-transform-origin: top left;
+    -webkit-transition-duration: 0.2s;
+    border:black;
+    width:120px;
+  }
+  
+  .listingHeader .dropdown .dd-c a{
+    color: black;
+    font-size:12px;
+    text-decoration:none;
+  }
+  
+  .listingHeader .dropdown .dd-c ul {
+    padding:inherit;
+    list-style-type: none;
+    padding-inline-start: 40px;
+  }
+  
+  .listingHeader .dropdown .dd-c ul ul {
+    font-size:calc(100% - 1px);
+    padding:inherit;
+    padding-left: 15px;
+    list-style-type: none;
+  }
+  
+  
+  .listingHeader .dropdown .accordion {
+    background:radial-gradient(1702px at -70.8% -20.8%, rgb(221, 221, 221) 0%, rgb(25, 46, 152) 100.2%);
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  .listingHeader .dropdown .active, .listingHeader .dropdown .accordion:hover {
+    background:radial-gradient(circle at 0.3% 1.3%, rgb(235, 217, 221) 0%, rgb(216, 174, 211) 45.1%, rgb(145, 130, 196) 100.2%);
+    border-bottom: 0px 0px 10px rgb(255, 248, 174);
+    color: white;
+    font-weight: bold;
+  }
+  
+  .listingHeader .dropdown .accordion:after {
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .listingHeader .dropdown .active:after {
+    content: "\2212";
+  }
+  
+  .listingHeader .dropdown .panel {
+    padding: 0 18px;
+    background-color: ghostwhite;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+/*.listingHeader .dropdown {
+    z-index:1;
+    position:absolute;
+    right: 0px;
+    top: 30px;
+    display: inline-block;
+    margin-top: 5px;
+    font-family: 'Roboto',sans-serif;
+    width: 120px;
+    
+  }
+  .listingHeader .dropdown .dd-a {
+    padding:0px;
+    background:transparent;
+    position:relative;
+    border-radius: 30px;
+    transition-duration: 0.2s;
+    -webkit-transition-duration: 0.2s;
+  }
+  .listingHeader .dropdown input {
+    top:0;
+    opacity:0;
+    display:block;
+    padding:0;
+    margin:0;
+    border:0;
+    position:absolute;
+    height:100%;
+    width:100%;
+  }
+  .listingHeader .dropdown input:hover {
+    cursor:pointer;
+    -webkit-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 15px 0px rgba(0,0,0,0.75);
+  }
+  .listingHeader .dropdown .dd-a span:hover  {
+      color:blue;
+  }
+  .listingHeader .dropdown input:checked:after {
+    transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+  }
+  .listingHeader .dropdown input:checked ~ .dd-c {
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+  }
+  .listingHeader .dropdown .dd-a span {
+    color:black;
+  }
+  
+  .listingHeader .dropdown .dd-c{
+    right: 0px;
+    left: -80px;
+    display:block;
+    position: absolute;
+    background:white;
+    height:auto;
+    transform: scaleY(0);
+    transform-origin: top left;
+    transition-duration: 0.2s;
+    -webkit-transform: scaleY(0);
+    -webkit-transform-origin: top left;
+    -webkit-transition-duration: 0.2s;
+    border:black;
+    width:120px;
+  
+  }
+  
+  .listingHeader .dropdown .accordion {
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+  }
+  
+  .listingHeader .dropdown .active, .listingHeader .dropdown .accordion:hover {
+    background-color: ghostwhite;
+    border-bottom: 2px solid black;
+  }
+  
+  .listingHeader .dropdown .accordion:after {
+    color: #777;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+  }
+  
+  .listingHeader .dropdown .active:after {
+    content: "\2212";
+  }
+  
+  .listingHeader .dropdown .panel {
+    padding: 0 18px;
+    background-color: ghostwhite;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }
+  .icon{
+    justify-content: center;
+  }*/
+  ::-webkit-scrollbar{
+    width:15px;
+    
+  }
+  ::-webkit-scrollbar-track{
+    box-shadow: inset 0 0 2px rgb(0, 190, 28);
+    border-radius: 10px;
+    
+   
+  }
+  ::-webkit-scrollbar-thumb{
+    background: rgb(167, 255, 179);
+    background:  radial-gradient(circle at -3.1% -4.3%, rgb(57, 255, 186) 0%, rgb(21, 38, 82) 90%);
+    border-radius: 10px;
+    
+  }
+  .arrow{
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 9;
+  }
+  .arrow a{
+    height: 39px;
+    width: 37px;
+    text-align: center;
+    background: #1b1b1b;
+    display: block;
+    border-radius: 30px;
+    border: 2px solid #fff;
+  }
+  .arrow a span{
+    color: #21fd16;
+    font-size: 25px;
+    line-height: 39px;
+    width: 100%;
+    cursor: pointer;
+  }
+  @media screen and (max-width: 1536px){
+    .listingHeader .dropdown .dd-a {
+        left: 1400px;
+        top: -85px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:1400px;
+        top: -85px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 1300px;
+        top: -35px;
+    }
+
+  }
+  
+  @media screen and (max-width: 1330px){
+    .listingHeader .dropdown .dd-a {
+        left: 1240px;
+        top: -85px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:1240px;
+        top: -85px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 1140px;
+        top: -35px;
+    }
+  }
+  @media screen and (max-width: 1300px){
+    .listingHeader .dropdown .dd-a {
+        left: 1210px;
+        top: -85px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:1210px;
+        top: -85px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 1120px;
+        top: -35px;
+    }
+  }
+  @media screen and (max-width: 1280px){
+    .listingHeader .dropdown .dd-a {
+        left: 1190px;
+        top: -85px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:1190px;
+        top: -85px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 1100px;
+        top: -35px;
+    }
+  }
+  @media screen and (max-width: 1250px){
+    .listingHeader .dropdown .dd-a {
+        left: 1160px;
+        top: -85px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:1160px;
+        top: -85px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 1060px;
+        top: -35px;
+    }
+  }
+  @media screen and (max-width: 1220px){
+    .listingHeader .dropdown .dd-a {
+        left: 1130px;
+        top: -85px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:1130px;
+        top: -85px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 1030px;
+        top: -35px;
+    }
+  }
+  @media screen and (max-width: 1190px){
+    .listingHeader .dropdown .dd-a {
+        left: 1100px;
+        top: -85px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:1100px;
+        top: -85px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 1000px;
+        top: -35px;
+    }
+  }
+  @media screen and (max-width: 1160px){
+    .listingHeader .dropdown .dd-a {
+        left: 1070px;
+        top: -85px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:1070px;
+        top: -85px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 970px;
+        top: -35px;
+    }
+  }
+  @media screen and (max-width: 1140px){
+    .listingHeader .dropdown .dd-a {
+        left: 1050px;
+        top: -85px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:1050px;
+        top: -85px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 950px;
+        top: -35px;
+    }
+  }
+  @media screen and (max-width: 1120px){
+    .listingHeader .dropdown .dd-a {
+        left: 1025px;
+        top: -85px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:1025px;
+        top: -85px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 930px;
+        top: -35px;
+    }
+  }
+  @media screen and (max-width: 1090px){
+    .listingHeader .dropdown .dd-a {
+        left: 1000px;
+        top: -85px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:1000px;
+        top: -85px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 900px;
+        top: -35px;
+    }
+  }
+  @media screen and (max-width: 1070px){
+    .listingHeader .dropdown .dd-a {
+        left: 980px;
+        top: -85px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:980px;
+        top: -85px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 880px;
+        top: -35px;
+    }
+  }
+  @media screen and (max-width: 1050px){
+    .listingHeader .dropdown .dd-a {
+        left: 955px;
+        top: -85px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:955px;
+        top: -85px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 860px;
+        top: -35px;
+    }
+  }
+@media screen and (max-width: 1024px){
+    .logo{
+        font-size: 35px;
+        padding-left: 30px;
+    }
+    .searchbar{
+        width: 300px;
+        right: 150px;
+        top: 25px;
+    }
+    .listingHeader .dropdown .dd-a {
+        left: 890px;
+        top: -67px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:890px;
+        top: -70px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 842px;
+        top: -25px;
+    }
+}
+@media screen and (max-width: 990px){
+    .listingHeader .dropdown .dd-a {
+        left: 850px;
+        top: -67px;
+    
+    }
+    .listingHeader .dropdown input {
+        left:850px;
+        top: -70px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 810px;
+        top: -25px;
+    }
+}
+@media screen and (max-width: 950px){
+    .boxs{
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+       
+    }
+    .box{
+        width:700px;
+        height: 100px; 
+    }
+    .listingHeader .dropdown .dd-a {
+        left: 806px;
+        top: -67px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:806px;
+        top: -70px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 760px;
+        top: -25px;
+    }
+   
+}
+@media screen and (max-width: 900px){
+    .listingHeader .dropdown .dd-a {
+        left: 760px;
+        top: -67px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:760px;
+        top: -70px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 710px;
+        top: -25px;
+    }
+}
+@media screen and (max-width: 850px){
+    .listingHeader .dropdown .dd-a {
+        left: 710px;
+        top: -67px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:710px;
+        top: -70px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 670px;
+        top: -25px;
+    }
+}
+@media screen and (max-width: 800px){
+    .listingHeader .dropdown .dd-a {
+        left: 660px;
+        top: -67px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:660px;
+        top: -70px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 620px;
+        top: -25px;
+    }
+}
+@media screen and (max-width: 750px){
+    .boxs{
+        overflow-x: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    
+    }
+    .box{
+        width:600px;
+        height: 100px; 
+    }
+    .box p{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-left: 70px; 
+    }
+    .searchbar{
+        width: 250px;
+    }
+    .listingHeader .dropdown .dd-a {
+        left: 605px;
+        top: -67px;
+    
+    }
+    .listingHeader .dropdown input {
+        left:605px;
+        top: -70px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 560px;
+        top: -25px;
+    }
+   
+}
+@media screen and (max-width: 700px){
+    .listingHeader .dropdown .dd-a {
+        left: 560px;
+        top: -67px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:560px;
+        top: -70px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 510px;
+        top: -25px;
+    }
+}
+@media screen and (max-width: 650px){
+    .logo{
+        font-size: 30px;
+    }
+    .searchbar{
+        width: 230px;
+        top: 20px;
+}
+.listingHeader .dropdown .dd-a {
+    left: 510px;
+    top: -60px;
+    
+}
+.listingHeader .dropdown input {
+    left:510px;
+    top: -60px;
+}
+.listingHeader .dropdown .dd-c{
+    left: 460px;
+    top: -18px;
+}
+}
+@media screen and (max-width: 615px){
+    .searchbar{
+        width: 230px;
+        top: 20px;
+        right: 110px;
+    }
+    .box{
+        width: 500px; 
+    }
+    .box p{
+       font-size: 12px;
+    }
+    
+}
+@media screen and (max-width: 600px){
+    .searchbar{
+        width: 200px;
+        top: 20px;
+        right: 130px;
+    }
+    .searchbar input{
+        max-width: 85%;
+    }
+    .listingHeader .dropdown .dd-a {
+        left: 475px;
+        top: -60px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:475px;
+        top: -60px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 420px;
+        top: -18px;
+    }
+}
+@media screen and (max-width: 565px){
+    .listingHeader .dropdown .dd-a {
+        left: 440px;
+        top: -60px;
+        
+    }
+    .listingHeader .dropdown input {
+        left:440px;
+        top: -60px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 390px;
+        top: -18px;
+    }
+}
+@media screen and (max-width: 530px){
+    .searchbar{
+        right:110px;
+        width:180px ;
+     }
+     .searchbar input{
+        max-width: 83%;
+    }
+     .listingHeader .dropdown .dd-a {
+        left: 420px;
+        top: -60px;
+        
+        
+    }
+    .listingHeader .dropdown input {
+        left:420px;
+        top: -60px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 370px;
+        top: -18px;
+    }
+}
+@media screen and (max-width: 515px){
+    .logo{
+        font-size: 25px;
+    } 
+    .searchbar{
+        right: 130px;
+        width: 160px;
+        top: 15px;
+     }
+     .searchbar input{
+        max-width: 81%;
+    }
+     .listingHeader .dropdown .dd-a {
+        left: 390px;
+        top: -52px;
+        
+        
+    }
+    .listingHeader .dropdown input {
+        left:390px;
+        top: -52px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 345px;
+        top: -15px;
+    }
+     .box{
+        width: 400px ;
+        height:80px;
+     }
+     .box img{
+        height: 50px;
+        width: 50px;
+        left: 6px;
+        top: 12px;
+     }
+     .box h2{
+        font-size: 15px;
+     }
+     .box p{
+        font-size: 10px;
+        padding-top: -10px;
+        padding-left: 25px;
+     }
+}
+@media screen and (max-width: 490px){
+    .logo{
+        font-size: 24px;
+        padding-left: 20px;
+    }
+    .searchbar{
+        right: 120px;
+        top: 13px;
+     }
+     .searchbar input{
+        max-width: 80%;
+    }
+     .listingHeader .dropdown .dd-a {
+        left: 375px;
+        top: -52px;
+        
+        
+    }
+    .listingHeader .dropdown input {
+        left:375px;
+        top: -52px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 325px;
+        top: -15px;
+    }
+    
+}
+@media screen and (max-width: 465px){
+    .listingHeader .dropdown .dd-a {
+        left: 350px;
+        top: -52px;
+        
+        
+    }
+    .listingHeader .dropdown input {
+        left:350px;
+        top: -52px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 300px;
+        top: -15px;
+    }
+    
+}
+@media screen and (max-width: 440px){
+    .searchbar{
+        right: 95px;
+        top: 13px;
+     }
+    .listingHeader .dropdown .dd-a {
+        left: 360px;
+        top: -50px;
+        
+        
+    }
+    .listingHeader .dropdown input {
+        left:360px;
+        top: -50px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 280px;
+        top: -8px;
+    }
+}
+@media screen and (max-width: 430px){
+    .searchbar{
+        right: 70px;
+        top: 13px;
+     }
+     .listingHeader .dropdown .dd-a {
+        left: 360px;
+        top: -53px;
+        
+        
+    }
+    .listingHeader .dropdown input {
+        left:360px;
+        top: -53px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 270px;
+        top: -8px;
+    }
+}
+
+
+@media screen and (max-width: 400px){
+        .box{
+            width: 350px;
+        }
+        .box p{
+            font-size: 9px;
+            padding-left: 49px;
+        }
+        .searchbar{
+            width: 180px;
+            right: 65px;
+        }
+        .listingHeader .dropdown .dd-a {
+            left: 340px;
+            top: -53px;
+            
+            
+        }
+        .listingHeader .dropdown input {
+            left:340px;
+            top: -53px;
+        }
+        .listingHeader .dropdown .dd-c{
+            left: 250px;
+            top: -8px;
+        }
+}
+@media screen and (max-width:385px) {
+    .searchbar{
+        right: 65px;
+        width: 145px;
+    }
+    .listingHeader .dropdown .dd-a {
+        left: 330px;
+        top: -53px;
+        
+        
+    }
+    .listingHeader .dropdown input {
+        left:330px;
+        top: -53px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 250px;
+        top: -8px;
+    }
+}
+@media screen and (max-width: 360px){
+    .logo{
+        font-size:22px ;
+    }
+    .searchbar{
+        top: 10px;
+        right: 50px;
+        width: 145px;
+    }
+    .box{
+        width: 280px;
+    }
+    .box p{
+        font-size: 7px;
+    }
+    .listingHeader .dropdown .dd-a {
+        left: 315px;
+        top: -53px;
+        
+        
+    }
+    .listingHeader .dropdown input {
+        left:315px;
+        top: -53px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 220px;
+        top: -8px;
+    }
+}
+@media screen and (max-width: 330px){
+    .logo{
+        font-size:21px ;
+        padding-left: 10px;
+    }
+    .searchbar{
+        top: 10px;
+        right: 45px;
+        width: 150px;
+       
+    }
+    .icon-search{
+        font-size: 14px;
+        right: 6px;
+    }
+    
+    .listingHeader .dropdown .dd-a {
+        left: 290px;
+        top: -50px;
+       
+        
+        
+        
+    }
+    .listingHeader .dropdown input {
+        left:290px;
+        top: -50px;
+       
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 160px;
+        top: 40px;
+    }
+
+}
+@media screen and (max-width: 320px) {
+    .logo{
+        font-size:19px ;
+        padding-left: 10px;
+    }
+    .searchbar{
+        
+        width: 145px;
+    }
+    .icon-search{
+        font-size: 14px;
+        right: 6px;
+        top: 10px;
+      
+    }
+    .listingHeader .dropdown .dd-a {
+        left: 280px;
+        top: -43px;
+        
+        
+    }
+    .listingHeader .dropdown input {
+        left:280px;
+        top: -43px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 180px;
+        top: 10px;
+    }
+}
+@media screen and (max-width: 300px){
+    .logo{
+        font-size: 17px;
+    }
+    .searchbar{
+        top: 10px;
+        right: 45px;
+        width: 140px;
+        height: 30px;
+    }
+    .icon-search{
+        font-size: 14px;
+        right: 6px;
+        top: 5px;
+      
+    }
+    .listingHeader .dropdown .dd-a {
+        left: 260px;
+        top: -45px;
+        
+        
+    }
+    .listingHeader .dropdown input {
+        left:260px;
+        top:-45px;
+    }
+    .listingHeader .dropdown .dd-c{
+        left: 160px;
+        top: -2px;
+    }
+    .box{
+        width: 265px;
+    }
+    .box p{
+        font-size: 6px;
+    }
+}
+@media screen and (max-width: 290px){
+    .searchbar{
+        top: 10px;
+        right: 40px;
+        width: 140px;
+        height: 30px;
+    }
+}
+
+

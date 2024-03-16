@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/project_details.css">
+</head>
+
+<body background="images/shutterstock_714357475.jpg">
+    <div class="container">
+        <h1 class="logo">Free<span>Lancia</span></h1>
+        <div class="para">
+            <h1>Data Entry</h1>
+            <img src="images/IMG-20230822-WA0011 (1).jpg" alt="">
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, ex incidunt esse eveniet minus harum
+                eaque perferendis, dolor, omnis rem assumenda? Inventore, iusto. Repudiandae velit alias exercitationem
+                odio vel quidem?Lorem ipsum dolor sit amet consectetur, adipisicing elit. Velit, quae consequatur!
+                Cupiditate accusamus, maxime error iure excepturi nulla cumque vero ipsum dignissimos animi, enim
+                consequuntur molestias velit alias, hic blanditiis. Lorem ipsum dolor sit, amet consectetur adipisicing
+                elit. Consequatur ipsum temporibus asperiores libero? Obcaecati officia excepturi eaque aperiam culpa
+                sed, ipsam optio nihil voluptatum esse? Assumenda ratione cumque aspernatur molestiae. Lorem ipsum
+                dolor, sit amet consectetur adipisicing elit. Accusantium odio natus quam culpa voluptates, neque
+                aliquam repudiandae harum magnam? Odio qui iste tenetur quod id dicta labore rerum excepturi quidem.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus unde recusandae, eligendi rerum,
+                provident vero voluptatibus commodi doloribus similique possimus maiores in veritatis quas. Doloribus
+                facilis nam labore! Quis, velit.
+            </p>
+            <div class="btn">
+                <button class="open-button" onclick="openForm()">Apply</button>
+                <a href="user_find_job.html"><button class="open-button">Back</button></a>
+            </div>
+        </div>
+    </div>
+    <!-- The form -->
+<div class="form-popup" id="myForm">
+    <form action="/action_page.php" class="form-container">
+      <h1>FreeLancia</h1>
+  
+      <label for="bid" class="bid"><b>Bid</b></label>
+      <input type="text" placeholder="Place your bid..." name="number" required style="border-radius: 15px; border: 1px solid #000;" >
+  
+      
+  
+      <a href="apply_job.html"><button type="submit" class="btn">Bid</button></a>
+      <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+    </form>
+  </div>
+    <script src="js/project_details.js"></script>
+</body>
+
+</html>
